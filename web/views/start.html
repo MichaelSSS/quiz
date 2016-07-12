@@ -1,0 +1,10 @@
+<form class="form" method="post" name="startForm" data-ng-submit="start(startForm.$valid)" novalidate>
+    <div class="form-group" data-ng-class="{'has-error': startForm.name.$touched && startForm.name.$invalid}">
+        <label>Tell us your name</label>
+        <input class="form-control" name="name" value="" data-ng-model="user.name" required/>
+        <div class="error" data-ng-show="startForm.name.$touched && startForm.name.$invalid">
+            <span class="help-block" data-ng-show="startForm.name.$error.required">Please, enter your name</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success" data-ng-disabled="submitting">Start</button>
+</form>

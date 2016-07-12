@@ -1,0 +1,14 @@
+<h1>{{user.challenge}}</h1>
+<form class="form" method="post" name="answerForm" data-ng-submit="submit(answerForm.$valid)" novalidate>
+    <div class="form-group">
+        <label>is</label>
+        <div class="radio" data-ng-repeat="answer in user.answers track by $index" data-ng-class="{'has-error': user.error == answer}">
+            <label>
+                <input type="radio" name="answer" value="{{answer}}" data-ng-model="user.currentAnswer"/>
+                {{answer}}
+            </label>
+            <span data-ng-show="user.error == answer">Incorrect answer</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
